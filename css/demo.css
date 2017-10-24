@@ -1,0 +1,26 @@
+
+
+body {
+	color: #141715;
+	background: #D4D2E0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+.section {
+	overflow: hidden;
+	position: relative;
+	height: 100vh;
+	min-height: 800px;
+	max-height: 1200px;
+	padding: 7vmax;
+}
+
+.section--right {
+	text-align: right;
+}
+
+.section--intro {
+	background: linear-gradient(90deg, #58A8FB, #465683);
+}
