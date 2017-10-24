@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+        <title>amica</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body class="demo-2">
+		<main>
+			<section class="section section--intro">
+				<div class="isolayer isolayer--deco1 isolayer--shadow">
+					<ul class="grid">
+						<li class="grid__item">
+                            <a class="grid__link">
+                                <img class="grid__img layer" src="perfil_face.png" alt="01" />
+							</a>
+						</li>
+					</ul>
+				</div>
+			</section><!--/intro-->
+        <script src="js/imagesloaded.pkgd.min.js"></script>
+        <script src="js/masonry.pkgd.min.js"></script>
+        <script src="js/dynamics.min.js"></script>
+        <script src="js/classie.js"></script>
+        <script src="js/animOnScroll.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+		(function() {
+			function getRandomInt(min, max) {
+				return Math.floor(Math.random() * (max - min + 1)) + min;
+			}
+
+			new IsoGrid(document.querySelector('.isolayer--deco1'), {
+				transform : 'translateX(-10vw) translateY(-220px) rotateX(45deg) rotateZ(45deg)',
+				stackItemsAnimation : {
+					properties : function(pos) {
+						return {
+							translateZ: (pos+1) * 30,
+							rotateZ: getRandomInt(-4, 4)
+						};
+					},
+					options : function(pos, itemstotal) {
+						return {
+							type: dynamics.bezier,
+							duration: 500,
+							points: [{"x":0,"y":0,"cp":[{"x":0.2,"y":1}]},{"x":1,"y":1,"cp":[{"x":0.3,"y":1}]}],
+							delay: (itemstotal-pos-1)*40
+						};
+					}
+				}
+			});
+		})();
+		</script>
+        </script>
+    </body>
+</html>
